@@ -77,11 +77,8 @@ function getAssignmentKey(assignment) {
   return `${assignment.courseId}:${assignment.id}`;
 }
 
-// Visual display section. This is intentionally structural HTML only.
-// STYLING GOES IN A SEPARATE FILE: add the rules to `styles.css`, then add
-// "css": ["styles.css"] inside this content script entry in manifest.json.
-// The stylesheet can target #due-buddy-panel and the stable element IDs below.
-// Keep presentation rules in that stylesheet, not here.
+// Visual display section. 
+
 
 function createWidget() {
   const panel = document.createElement("aside");
@@ -178,8 +175,7 @@ function renderWidget(panel, assignments, completedIds) {
 }
 
 async function run() {
-  // Canvas may replace page regions during navigation; avoid adding a second
-  // widget and a second set of event handlers to the same page.
+
   if (document.querySelector("#due-buddy-panel")) return;
 
   const canvasContent = document.querySelector("#content") ||
