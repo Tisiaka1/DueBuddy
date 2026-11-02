@@ -1,6 +1,6 @@
 # Thebes  
 
-fun fact: The name Thebes was chosen from Philip Freeman 'Alexander the great' book. Thebes were  little defiant  people. alexander the great had to put in their place.  
+fun fact: The name Thebes was chosen from Philip Freeman 'Alexander the great' book. Thebans were  little defiant  people. alexander the great had to put in their place.  
 
 **A calmer way to keep up with Canvas assignments.** Thebes turns upcoming coursework into a focused todo list, so students can see what needs attention next without digging through every course.
 
