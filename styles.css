@@ -1,0 +1,294 @@
+#due-buddy-panel {
+  /* Canvas publishes these brand tokens from the user's institution theme. */
+  --db-ink: var(--ic-brand-font-color-dark, CanvasText);
+  --db-muted: color-mix(in srgb, var(--db-ink) 68%, transparent);
+  --db-line: color-mix(in srgb, var(--db-ink) 14%, transparent);
+  --db-blue: var(--ic-brand-primary, #315fce);
+  --db-blue-dark: color-mix(in srgb, var(--db-blue) 82%, black);
+  --db-surface: Canvas;
+  box-sizing: border-box;
+  max-width: 940px;
+  margin: 0 auto 28px;
+  overflow: hidden;
+  color: var(--db-ink);
+  background: var(--db-surface);
+  border: 1px solid var(--db-line);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--db-ink) 12%, transparent);
+  font-family: inherit;
+}
+
+#due-buddy-panel *,
+#due-buddy-panel *::before,
+#due-buddy-panel *::after {
+  box-sizing: border-box;
+}
+
+#due-buddy-panel > header {
+  position: relative;
+  padding: 24px 28px 22px;
+  color: #fff;
+  background: linear-gradient(115deg, var(--db-blue-dark), var(--db-blue));
+}
+
+#due-buddy-panel > header p {
+  margin: 0;
+}
+
+#due-buddy-panel > header p:first-child {
+  margin-bottom: 8px;
+  color: color-mix(in srgb, Canvas 86%, var(--db-blue));
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#due-buddy-panel > header h2 {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(22px, 3vw, 29px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+#due-buddy-panel > header p:last-child {
+  margin-top: 7px;
+  color: color-mix(in srgb, Canvas 90%, var(--db-blue));
+  font-size: 14px;
+}
+
+#due-buddy-panel > div {
+  display: grid;
+  grid-template-columns: minmax(220px, .72fr) minmax(0, 1.6fr);
+  gap: 22px;
+  padding: 22px 28px 26px;
+}
+
+#due-buddy-panel section {
+  min-width: 0;
+}
+
+#due-buddy-panel section[aria-label="Progress this week"] {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 9px 16px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--db-ink) 4%, var(--db-surface));
+  border: 1px solid var(--db-line);
+  border-radius: 11px;
+}
+
+#due-buddy-panel section[aria-label="Progress this week"] > span {
+  color: var(--db-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#due-buddy-progress-text {
+  color: var(--db-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#due-buddy-progress {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  appearance: none;
+  border: 0;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--db-ink) 14%, var(--db-surface));
+}
+
+#due-buddy-progress::-webkit-progress-bar {
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--db-ink) 14%, var(--db-surface));
+}
+
+#due-buddy-progress::-webkit-progress-value {
+  border-radius: 99px;
+  background: var(--db-blue);
+  transition: width .25s ease;
+}
+
+#due-buddy-progress::-moz-progress-bar {
+  border-radius: 99px;
+  background: var(--db-blue);
+}
+
+#due-buddy-panel section h3 {
+  margin: 0 0 12px;
+  color: var(--db-ink);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+#due-buddy-focus {
+  padding: 18px;
+  background: var(--db-surface);
+  border: 1px solid var(--db-line);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--db-ink) 7%, transparent);
+}
+
+#due-buddy-focus-course {
+  margin: 0 0 8px;
+  color: var(--db-blue);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+#due-buddy-focus-name {
+  margin: 0;
+  color: var(--db-ink);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+#due-buddy-focus-due {
+  margin: 9px 0 0;
+  color: var(--db-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+#due-buddy-focus-kind {
+  display: none;
+}
+
+#due-buddy-complete {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 0 15px;
+  color: #fff;
+  background: var(--db-blue);
+  border: 1px solid var(--db-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+#due-buddy-complete:hover:not(:disabled) {
+  background: var(--db-blue-dark);
+  border-color: var(--db-blue-dark);
+}
+
+#due-buddy-complete:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+#due-buddy-complete:focus-visible,
+#due-buddy-panel a:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 3px;
+}
+
+#due-buddy-complete:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+#due-buddy-queue {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: due-buddy-task;
+}
+
+#due-buddy-queue li {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px 13px 12px 42px;
+  background: color-mix(in srgb, var(--db-ink) 2%, var(--db-surface));
+  border: 1px solid var(--db-line);
+  border-radius: 10px;
+  counter-increment: due-buddy-task;
+}
+
+#due-buddy-queue li::before {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  color: var(--db-blue);
+  background: color-mix(in srgb, var(--db-blue) 10%, var(--db-surface));
+  border: 1px solid color-mix(in srgb, var(--db-blue) 22%, var(--db-surface));
+  border-radius: 50%;
+  content: counter(due-buddy-task);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+#due-buddy-queue li strong {
+  color: var(--db-ink);
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+#due-buddy-queue li span {
+  color: var(--db-muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+#due-buddy-queue li a {
+  width: fit-content;
+  margin-top: 3px;
+  color: var(--db-blue);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#due-buddy-queue li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  #due-buddy-panel {
+    margin: 0 0 20px;
+    border-radius: 12px;
+  }
+
+  #due-buddy-panel > header {
+    padding: 20px;
+  }
+
+  #due-buddy-panel > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px 20px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #due-buddy-panel *,
+  #due-buddy-panel *::before,
+  #due-buddy-panel *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
